@@ -1,0 +1,6 @@
+channel_priority: strict
+channels:
+  - conda-forge
+conda-build:
+  root-dir: /home/conda/feedstock_root/build_artifacts
+

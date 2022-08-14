@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # Adapted from https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/bin/tmux-sessionizer
 
 if [[ $# -eq 1 ]]; then
@@ -48,8 +47,7 @@ if ! tmux has-session -t=$selected_name 4> /dev/null; then
 
 fi
 
-
-
+# Attach or switch to session
 if [[ -z $TMUX ]]
 then
   tmux attach-session -t $selected_name:0

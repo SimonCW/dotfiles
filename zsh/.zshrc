@@ -1,23 +1,28 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/simon/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
-# Flutter sdk
-export PATH=$HOME/devtools/sdks/flutter/bin:$PATH
-
-# Android
-export ANDROID_HOME=$HOME/devtools/sdks/android
-export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
-export PATH=$ANDROID_HOME/platform-tools:$PATH
+# E.g. Lunarvim
+PATH=$PATH:~/.local/bin
 
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+SOLARIZED_THEME="dark"
+
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -31,14 +36,13 @@ ZSH_THEME="robbyrussell"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -53,6 +57,9 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -76,7 +83,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-syntax-highlighting zsh-autosuggestions docker)
+# zsh-nvim was addeded b/c it is the easiest way to install nvm
+plugins=(gitfast autoupdate z zsh-syntax-highlighting zsh-autosuggestions docker aws zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,16 +97,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-
-    export VISUAL="vim"
-    export EDITOR="$VISUAL"
+  export EDITOR='vim'
 else
-    export VISUAL="vim"
-    export EDITOR="$VISUAL"
+  export EDITOR='vim'
 fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -108,20 +113,60 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias pqt="parquet-tools"
+alias exal="exa -al"
+alias tree2="tree -L 2"
+alias vim="nvim"
+alias sproj="$HOME/.scripts/tmux-start-fzf.sh"
+alias pproj="$HOME/.scripts/tmux-start-fzf.sh $HOME/Repos/vrec/personalised-recommendations/"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/simon/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/homebrew/Caskroom/mambaforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/simon/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/simon/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/conda.sh"
     else
-        export PATH="/home/simon/miniconda3/bin:$PATH"
+        export PATH="/opt/homebrew/Caskroom/mambaforge/base/bin:$PATH"
     fi
 fi
 unset __conda_setup
+
+if [ -f "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/mamba.sh" ]; then
+    . "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
-#
-#
+
+# Add Standard GNU Tools to path
+# see: https://gist.github.com/skyzyx/3438280b18e4f7c490db8a2a2ca0b9da
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX=$(brew --prefix)
+  NEWPATH=${PATH}
+  # gnubin; gnuman
+  for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnubin; do NEWPATH=$d:$NEWPATH; done
+  for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnuman; do export MANPATH=$d:$MANPATH; done
+ export PATH=$(echo ${NEWPATH} | tr ':' '\n' | cat -n | sort -uk2 | sort -n | cut -f2- | xargs | tr ' ' ':')
+fi
+
+# Colorful man pages: https://www.cyberciti.biz/faq/unix-linux-color-man-pages-configuration/
+export PAGER="/opt/homebrew/bin/most -s"
+
+# One Password Shell completions 
+eval "$(op completion zsh)"; compdef _op op
+
+
+# https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
+
+
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"
+
+
+

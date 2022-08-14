@@ -169,4 +169,5 @@ export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"
 
 
-
+# 😤 necessary for tmux-256 colors, see https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/ 
+export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo

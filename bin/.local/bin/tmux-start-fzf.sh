@@ -6,7 +6,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-  selected=$(find ~/Repos/ ~/Repos/vrec ~/.config/ ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
+  selected=$(find ~/Repos/ ~/Repos/vrec ~/Repos/dotfiles ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 # Exit if nothing found
@@ -20,24 +20,32 @@ tmux_running=$(pgrep tmux)
 # Start a base tmux session if none is running
 # I think I have to start a session ...
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-  echo "Tmux not running"
   tmux new-session -ds "BaseSess"
 fi
 
 if ! tmux has-session -t=$selected_name 4> /dev/null; then
-  echo "Tmux running"
   tmux new-session -ds $selected_name -c $selected
 
   if [[ $selected_name == "personalised-recommendations" ]]; then
-    echo "pers detected"
     window=0
     tmux rename-window -t $selected_name:$window "Vim"
     tmux send-keys -t $selected_name:$window "conda activate persrec" C-m
-    tmux send-keys -t $selected_name:$window "nvim" C-m
+    tmux send-keys -t $selected_name:$window "vim" C-m
     window=1
     tmux new-window -t $selected_name:$window -n "Shell" -c $selected
     tmux send-keys -t $selected_name:$window "conda activate persrec" C-m
   fi
+  if [[ $selected_name == "mytechblog" ]]; then
+    window=0
+    tmux rename-window -t $selected_name:$window "Vim"
+    tmux send-keys -t $selected_name:$window "vim" C-m
+    window=1
+    tmux new-window -t $selected_name:$window -n "Shell" -c $selected
+    window=2
+    tmux new-window -t $selected_name:$window -n "Server" -c $selected
+    tmux send-keys -t $selected_name:$window "hugo server -D" C-m
+  fi
+
 fi
 
 

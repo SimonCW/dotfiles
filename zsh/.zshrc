@@ -117,8 +117,8 @@ alias pqt="parquet-tools"
 alias exal="exa -al"
 alias tree2="tree -L 2"
 alias vim="nvim"
-alias sproj="$HOME/.scripts/tmux-start-fzf.sh"
-alias pproj="$HOME/.scripts/tmux-start-fzf.sh $HOME/Repos/vrec/personalised-recommendations/"
+alias sproj="$HOME/.local/bin/tmux-start-fzf.sh"
+alias pproj="$HOME/.local/bin/tmux-start-fzf.sh $HOME/Repos/vrec/personalised-recommendations/"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

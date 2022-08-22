@@ -48,4 +48,4 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- Format on Save
 local fmt_grp = vim.api.nvim_create_augroup("Formatting", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePre", { pattern= {"*.py"}, command = "lua vim.lsp.buf.formatting_sync()", group = fmt_grp })
+vim.api.nvim_create_autocmd("BufWritePre", { pattern= {"*.py", "*.json", "*.rs"}, command = "lua vim.lsp.buf.formatting_sync()", group = fmt_grp })

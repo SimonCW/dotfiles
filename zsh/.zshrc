@@ -113,6 +113,7 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cat="bat"
 alias pqt="parquet-tools"
 alias exal="exa -al"
 alias t2="tree -L 2"

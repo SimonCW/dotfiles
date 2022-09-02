@@ -5,7 +5,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-  selected=$(find ~/Repos/ ~/Repos/vrec ~/Repos/training ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
+  selected=$(find ~/Repos/ ~Repos/contrib ~/Repos/vrec ~/Repos/training -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 # Exit if nothing found
@@ -33,8 +33,7 @@ if ! tmux has-session -t=$selected_name 4> /dev/null; then
     window=1
     tmux new-window -t $selected_name:$window -n "Shell" -c $selected
     tmux send-keys -t $selected_name:$window "conda activate persrec" C-m
-  fi
-  if [[ $selected_name == "mytechblog" ]]; then
+  elif [[ $selected_name == "mytechblog" ]]; then
     window=0
     tmux rename-window -t $selected_name:$window "Vim"
     tmux send-keys -t $selected_name:$window "vim" C-m
@@ -43,6 +42,11 @@ if ! tmux has-session -t=$selected_name 4> /dev/null; then
     window=2
     tmux new-window -t $selected_name:$window -n "Server" -c $selected
     tmux send-keys -t $selected_name:$window "hugo server -D" C-m
+  else
+    window=0
+    tmux send-keys -t $selected_name:$window "vim" C-m
+    window=1
+    tmux new-window -t $selected_name:$window -c $selected
   fi
 
 fi

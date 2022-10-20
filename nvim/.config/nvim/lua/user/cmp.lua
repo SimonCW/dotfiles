@@ -10,7 +10,6 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
-
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
@@ -19,7 +18,7 @@ end
 local kind_icons = {
 	Text = "",
 	Method = "",
-	Function = "",
+	Function = "",
 	Constructor = "",
 	Field = "",
 	Variable = "",
@@ -31,7 +30,7 @@ local kind_icons = {
 	Value = "",
 	Enum = "",
 	Keyword = "",
-	Snippet = "",
+	Snippet = "",
 	Color = "",
 	File = "",
 	Reference = "",
@@ -129,6 +128,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
+		{ name = "buffer" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

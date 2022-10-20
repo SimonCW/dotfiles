@@ -23,10 +23,10 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<CS-Up>", ":resize -2<CR>", opts)
-keymap("n", "<CS-Down>", ":resize +2<CR>", opts)
-keymap("n", "<CS-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<CS-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -68,8 +68,8 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
-keymap("n", "gc", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "gc", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)

@@ -9,7 +9,6 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
--- this for flake? .with { extra_args = { "--max-line-length=88", "--extend-ignore=E203" }}
 null_ls.setup {
   debug = false,
   sources = {

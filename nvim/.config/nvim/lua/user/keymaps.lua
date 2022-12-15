@@ -50,7 +50,6 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
-
 -- leap
 keymap("n", "s", "<Plug>(leap-forward)")
 keymap("n", "S", "<Plug>(leap-backward)")
@@ -87,5 +86,3 @@ keymap("n", "<leader>gq", "<Plug>(grammarous-close-info-window)")
 keymap("n", "<leader>gn", "<Plug>(grammarous-move-to-next-error)")
 keymap("n", "<leader>gp", "<Plug>(grammarous-move-to-previous-error)")
 keymap("n", "<leader>gf", "<Plug>(grammarous-fixit)")
-
-

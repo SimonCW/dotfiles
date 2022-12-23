@@ -50,10 +50,6 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
--- leap
-keymap("n", "s", "<Plug>(leap-forward)")
-keymap("n", "S", "<Plug>(leap-backward)")
-
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 

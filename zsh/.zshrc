@@ -114,7 +114,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pqt="parquet-tools"
-alias exal="exa -al"
+alias ll="exa -al"
 alias t2="tree -L 2"
 alias vim="nvim"
 alias sproj="$HOME/.local/bin/tmux-start-fzf.sh"

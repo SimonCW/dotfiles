@@ -15,4 +15,3 @@ let g:grammarous#disabled_rules = {
     \        'NON_STANDARD_WORD'],
     \ }
 ]]
-

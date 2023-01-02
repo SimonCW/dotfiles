@@ -5,7 +5,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-  selected=$(find ~/Repos/ ~/Repos/at-factory ~Repos/contrib ~/Repos/vrec ~/Repos/training ~/Repos/scratch -mindepth 1 -maxdepth 1 -type d | fzf)
+  selected=$(find ~/Repos/ ~/Repos/at-factory ~/Repos/contrib ~/Repos/vrec ~/Repos/training ~/Repos/scratch -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 # Exit if nothing found
@@ -22,7 +22,7 @@ if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
   tmux new-session -ds "BaseSess"
 fi
 
-if ! tmux has-session -t=$selected_name 4> /dev/null; then
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
   tmux new-session -ds $selected_name -c $selected
 
   if [[ $selected_name == "personalised-recommendations" ]]; then

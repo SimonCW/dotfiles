@@ -90,6 +90,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# bat configuration, https://github.com/sharkdp/bat#customization
+export BAT_THEME="TwoDark"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Set Manpager 

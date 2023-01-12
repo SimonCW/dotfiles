@@ -85,8 +85,8 @@ return packer.startup(function(use)
   use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
   use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
   use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
-  use { "zbirenbaum/copilot-cmp" }
-  use { "simrat39/rust-tools.nvim" }
+  use { "zbirenbaum/copilot-cmp", commit = "b732a58ac8b7287b981cd9f0d9c0f61e5e9d5760" }
+  use { "simrat39/rust-tools.nvim", commit = "df584e84393ef255f5b8cbd709677d6a3a5bf42f" }
 
   -- snippets
   use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
@@ -94,11 +94,11 @@ return packer.startup(function(use)
 
   -- LSP
   -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
-  use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
-  use { "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" }
-  use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
-  use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
-  use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
+  use { "neovim/nvim-lspconfig", commit = "f0221821d8ceed70f0525a2c35380ba56672e107" } -- enable LSP
+  use { "williamboman/mason.nvim", commit = "4d734aee41efce4f1a4be7619ad040b53237042e" }
+  use { "williamboman/mason-lspconfig.nvim", commit = "3751eb5c56c67b51e68a1f4a0da28ae74ab771c1" }
+  use { "jose-elias-alvarez/null-ls.nvim", commit = "915558963709ea17c5aa246ca1c9786bfee6ddb4" } -- for formatters and linters
+  use { "RRethy/vim-illuminate", commit = "da80f3877896adcf77f59fb0bf74e9601615d372" }
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }

@@ -77,8 +77,9 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
--- Grammarous
-keymap("n", "<leader>gq", "<Plug>(grammarous-close-info-window)")
-keymap("n", "<leader>gn", "<Plug>(grammarous-move-to-next-error)")
-keymap("n", "<leader>gp", "<Plug>(grammarous-move-to-previous-error)")
-keymap("n", "<leader>gf", "<Plug>(grammarous-fixit)")
+--
+-- -- Grammarous
+-- keymap("n", "<leader>gq", "<Plug>(grammarous-close-info-window)")
+-- keymap("n", "<leader>gn", "<Plug>(grammarous-move-to-next-error)")
+-- keymap("n", "<leader>gp", "<Plug>(grammarous-move-to-previous-error)")
+-- keymap("n", "<leader>gf", "<Plug>(grammarous-fixit)")

@@ -63,7 +63,6 @@ return packer.startup(function(use)
       end, 100)
     end,
   }
-  use { "rhysd/vim-grammarous" }
 
   use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
   use { "akinsho/toggleterm.nvim", commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" }

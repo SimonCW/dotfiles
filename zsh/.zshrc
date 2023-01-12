@@ -78,6 +78,11 @@ SOLARIZED_THEME="dark"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Write completion caches
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+export ZSHZ_DATA=$ZSH/cache/.z
+
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/

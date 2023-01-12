@@ -80,6 +80,35 @@ M.on_attach = function(client, bufnr)
     client.server_capabilities.documentFormattingProvider = false
   end
 
+  if client.name == "rust_analyzer" then
+    local rt_opts = {
+      tools = {}, -- rust-tools options
+      -- all the opts to send to nvim-lspconfig
+      -- these override the defaults set by rust-tools.nvim
+      -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
+      server = {
+        -- standalone file support
+        -- setting it to false may improve startup time
+        standalone = true,
+        settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = {
+              command = "clippy",
+            },
+          },
+        },
+      }, -- rust-analyzer options
+      -- debugging stuff
+      -- dap = {
+      --   adapter = {
+      --     type = "executable",
+      --     command = "lldb-vscode",
+      --     name = "rt_lldb",
+      --   },
+      -- },
+    }
+    require("rust-tools").setup(rt_opts)
+  end
   -- turn off formatting for the jsonls (use null-ls prettier)
   if client.name == "jsonls" then
     client.resolved_capabilities.document_formatting = false

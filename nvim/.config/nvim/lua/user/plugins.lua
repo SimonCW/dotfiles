@@ -93,7 +93,6 @@ return packer.startup(function(use)
   use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
 
   -- LSP
-  -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
   use { "neovim/nvim-lspconfig", commit = "f0221821d8ceed70f0525a2c35380ba56672e107" } -- enable LSP
   use { "williamboman/mason.nvim", commit = "4d734aee41efce4f1a4be7619ad040b53237042e" }
   use { "williamboman/mason-lspconfig.nvim", commit = "3751eb5c56c67b51e68a1f4a0da28ae74ab771c1" }

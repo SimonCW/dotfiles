@@ -115,21 +115,20 @@ cmp.setup {
       return vim_item
     end,
   },
+  -- copilot
+  -- max_item_count = 3,
+  --     trigger_characters = {
+  --       { ".", ":", "(", "'", '"', "[", ",", "#", "*", "@", "|", "=", "-", "{", "/", "\\", "+", "?" },
+  --     },
+  --     group_index = 2,
+
   sources = {
     { name = "nvim_lsp" },
-    { name = "buffer" },
-    {
-      name = "copilot",
-      max_item_count = 3,
-      trigger_characters = {
-        { ".", ":", "(", "'", '"', "[", ",", "#", "*", "@", "|", "=", "-", "{", "/", "\\", "+", "?" },
-      },
-      group_index = 2,
-    },
-    { name = "path" },
-    { name = "nvim_lua" },
+    { name = "copilot" },
     { name = "luasnip" },
     { name = "buffer" },
+    { name = "path" },
+    { name = "nvim_lua" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

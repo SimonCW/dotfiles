@@ -53,14 +53,12 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua" }
   use { "akinsho/bufferline.nvim" }
   use { "moll/vim-bbye" }
-  use { "github/copilot.vim" }
   use {
     "zbirenbaum/copilot.lua",
-    event = { "VimEnter" },
+    cmd = "Copilot",
+    event = "InsertEnter",
     config = function()
-      vim.defer_fn(function()
-        require "user.copilot"
-      end, 100)
+      require("copilot").setup { suggestion = { enabled = false }, panel = { enabled = false } }
     end,
   }
 
@@ -85,7 +83,13 @@ return packer.startup(function(use)
   use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
   use { "hrsh7th/cmp-nvim-lsp" }
   use { "hrsh7th/cmp-nvim-lua" }
-  use { "zbirenbaum/copilot-cmp" }
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  }
   use { "simrat39/rust-tools.nvim" }
 
   -- snippets

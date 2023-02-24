@@ -58,7 +58,10 @@ return packer.startup(function(use)
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-      require("copilot").setup { suggestion = { enabled = false }, panel = { enabled = false } }
+      require("copilot").setup {
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      }
     end,
   }
 

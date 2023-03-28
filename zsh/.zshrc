@@ -169,10 +169,6 @@ fi
 # Colorful man pages: https://www.cyberciti.biz/faq/unix-linux-color-man-pages-configuration/
 export PAGER="/opt/homebrew/bin/most -s"
 
-# One Password Shell completions 
-eval "$(op completion zsh)"; compdef _op op
-
-
 # https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent

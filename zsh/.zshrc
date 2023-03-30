@@ -180,3 +180,7 @@ export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"
 
 # 😤 necessary for tmux-256 colors, see https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/ 
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

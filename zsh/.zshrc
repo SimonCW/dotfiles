@@ -184,3 +184,17 @@ export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Nvim Switcher, see https://youtu.be/LkHjJlSgKZY
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+function nvims() {
+  items=("default" "AstroNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}

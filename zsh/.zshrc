@@ -198,3 +198,7 @@ function nvims() {
   fi
   NVIM_APPNAME=$config nvim $@
 }
+
+
+# Move hidden files
+setopt -s glob_dots

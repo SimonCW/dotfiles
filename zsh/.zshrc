@@ -200,5 +200,3 @@ function nvims() {
 }
 
 
-# Move hidden files
-setopt -s glob_dots

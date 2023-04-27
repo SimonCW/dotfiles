@@ -185,6 +185,9 @@ export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# Set which Neovim config is started with `nvim`
+export NVIM_APPNAME="AstroNvim"
+
 # Nvim Switcher, see https://youtu.be/LkHjJlSgKZY
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
 function nvims() {

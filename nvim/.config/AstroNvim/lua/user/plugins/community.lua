@@ -1,7 +1,7 @@
 return {
   -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.rust", enabled = true },
+  { import = "astrocommunity.pack.rust",              enabled = true },
   {
     "rust-tools.nvim",
     opts = {
@@ -36,6 +36,13 @@ return {
     },
   },
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
-  -- { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
+  {
+    -- further customize the options set by the community
+    "catppuccin",
+    opts = {
+      flavour = "macchiato", -- latte, frappe, macchiato, mocha
+    },
+  },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }

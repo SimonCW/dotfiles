@@ -12,20 +12,7 @@ return {
           auto = true,
           only_current_line = false,
           show_parameter_hints = true,
-          highlight = "Cursor",
-        },
-        hover_actions = {
-          border = {
-            { "╒", "FloatBorder" },
-            { "═", "FloatBorder" },
-            { "╕", "FloatBorder" },
-            { "│", "FloatBorder" },
-            { "╛", "FloatBorder" },
-            { "─", "FloatBorder" },
-            { "╘", "FloatBorder" },
-            { "│", "FloatBorder" },
-          },
-          auto_focus = true,
+          highlight = "Comment",
         },
       },
       server = {
@@ -35,7 +22,7 @@ return {
         settings = {
           ["rust-analyzer"] = {
             lens = {
-              enable = true,
+              enable = false,
             },
             check = {
               command = "clippy",

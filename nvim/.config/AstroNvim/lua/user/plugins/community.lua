@@ -21,6 +21,9 @@ return {
         standalone = true,
         settings = {
           ["rust-analyzer"] = {
+            cargo = {
+              features = "all",
+            },
             lens = {
               enable = false,
             },

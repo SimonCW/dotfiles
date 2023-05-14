@@ -27,6 +27,7 @@ return function(local_vim)
   local_vim.opt.spell = false -- sets vim.opt.spell
   local_vim.opt.signcolumn = "auto" -- sets vim.opt.signcolumn to auto
   local_vim.opt.wrap = false -- sets vim.opt.wrap
+  local_vim.opt.clipboard = nil --Other option: "unnamedplus"
 
   local_vim.g.mapleader = " " -- sets vim.g.mapleader
   local_vim.g.autoformat_enabled = true -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)

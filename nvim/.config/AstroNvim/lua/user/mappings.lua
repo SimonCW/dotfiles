@@ -22,15 +22,14 @@ return {
     -- Navigate buffers
     ["<S-l>"] = { ":bnext<CR>" },
     ["<S-h>"] = { ":bprevious<CR>" },
-    ["<S-q>"] = { "<cmd>Bdelete!<CR>" },
+    ["<S-q>"] = { "<cmd>bdelete!<CR>" },
     -- Was here before
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
-          require("astronvim.utils.buffer").close(
-            bufnr)
-        end)
+        require("astronvim.utils.status").heirline.buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
       end,
       desc = "Pick to close",
     },

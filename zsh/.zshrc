@@ -89,7 +89,7 @@ export ZSHZ_DATA=$ZSH/cache/.z
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-nvim was addeded b/c it is the easiest way to install nvm
-plugins=(gitfast autoupdate z zsh-syntax-highlighting zsh-autosuggestions docker aws zsh-nvm)
+plugins=(gitfast autoupdate z zsh-syntax-highlighting zsh-autosuggestions docker)
 
 source $ZSH/oh-my-zsh.sh
 

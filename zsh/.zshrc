@@ -127,11 +127,14 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pqt="parquet-tools"
-alias t2="tree -L 2"
 alias ll="eza -al"
 alias vim="nvim"
 alias sproj="$HOME/.local/bin/tmux-start-fzf.sh"
 alias pproj="$HOME/.local/bin/tmux-start-fzf.sh $HOME/Repos/vrec/personalised-recommendations/"
+ et() { eza -alT --git -I'.git|node_modules|.mypy_cache|.pytest_cache|.venv' --color=always "$@" | bat; }
+    alias et1='et -L1'
+    alias et2='et -L2'
+    alias et3='et -L3'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

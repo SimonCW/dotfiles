@@ -22,7 +22,7 @@ return {
     -- Navigate buffers
     ["<S-l>"] = { ":bnext<CR>" },
     ["<S-h>"] = { ":bprevious<CR>" },
-    ["<S-q>"] = { "<cmd>bdelete!<CR>" },
+    ["<S-q>"] = { ":bdelete<CR>" },
     -- Was here before
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {

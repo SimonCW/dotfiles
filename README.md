@@ -11,7 +11,7 @@ stow --target=$HOME */
 
 Notes on `terminfo`:
 **Update 2024-01-09**
-Seems that the terminfo hack isn't necessary anymore, so I removed the file.
+Since macOS 14 (Sonoma) the terminfo hack isn't necessary anymore, so I removed the file.
 
 This was necessary to get the colors right in tmux, neovim, alacritty on my MacOS (tmux-256color in .tmux.conf). See this for context https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/
 You can check with the `./24-bit-color.sh` script.

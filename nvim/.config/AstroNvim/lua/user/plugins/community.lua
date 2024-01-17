@@ -1,7 +1,7 @@
 return {
   -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.rust",              enabled = true },
+  { import = "astrocommunity.pack.rust", enabled = true },
   {
     "rust-tools.nvim",
     opts = {
@@ -44,5 +44,5 @@ return {
       flavour = "macchiato", -- latte, frappe, macchiato, mocha
     },
   },
-  { import = "astrocommunity.completion.copilot-lua-cmp", enabled = true },
+  { import = "astrocommunity.completion.copilot-lua-cmp", enabled = false },
 }

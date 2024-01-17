@@ -11,6 +11,7 @@ return {
 
     -- LSP mappings
     ["gh"] = { "<cmd>lua vim.lsp.buf.hover()<CR>" },
+    ["gs"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
     ["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>" },
     ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>" },
     ["gI"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>" },
@@ -18,7 +19,6 @@ return {
     ["gl"] = { "<cmd>lua vim.diagnostic.open_float()<CR>" },
     ["<leader>lI"] = { "<cmd>LspInstallInfo<cr>" },
     ["<leader>la"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>" },
-    ["<leader>ls"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
     -- Navigate buffers
     ["<S-l>"] = { ":bnext<CR>" },
     ["<S-h>"] = { ":bprevious<CR>" },

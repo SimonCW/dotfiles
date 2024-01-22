@@ -1,6 +1,7 @@
 return {
   -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim", enabled = true },
   { import = "astrocommunity.pack.rust", enabled = true },
   {
     "rust-tools.nvim",

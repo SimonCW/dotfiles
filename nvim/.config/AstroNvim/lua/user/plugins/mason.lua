@@ -14,7 +14,6 @@ return {
         "ruff_lsp",
         "taplo",
         "rust_analyzer",
-        "marksman",
       },
     },
   },

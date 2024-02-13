@@ -14,6 +14,7 @@ return {
         "ruff_lsp",
         "taplo",
         "rust_analyzer",
+        "denols",
       },
     },
   },
@@ -22,7 +23,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "prettier", "stylua", "black" },
+      ensure_installed = { "stylua", "black" },
     },
   },
   {

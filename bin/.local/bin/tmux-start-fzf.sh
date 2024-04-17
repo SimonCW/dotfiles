@@ -5,7 +5,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-  selected=$(find ~/Repos/ ~/Repos/contrib/ ~/Repos/scratch ~/Repos/learning ~/Repos/hrsw-medtech -mindepth 1 -maxdepth 1 -type d | fzf)
+  selected=$(fd . ~/Repos/ ~/Repos/contrib/ ~/Repos/scratch ~/Repos/learning ~/Repos/teamcto --maxdepth 1 --type d 2>/dev/null | fzf)
 fi
 
 # Exit if nothing found

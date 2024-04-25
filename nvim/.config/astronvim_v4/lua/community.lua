@@ -17,4 +17,5 @@ return {
       flavour = "macchiato", -- latte, frappe, macchiato, mocha
     },
   },
+  { import = "astrocommunity.pack.rust" },
 }

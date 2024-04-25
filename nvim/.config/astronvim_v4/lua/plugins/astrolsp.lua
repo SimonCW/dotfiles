@@ -85,6 +85,13 @@ return {
     mappings = {
       n = {
         gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
+        gh = { function() vim.lsp.buf.hover() end },
+        gs = { function() vim.lsp.buf.signature_help() end },
+        gd = { function() vim.lsp.buf.definition() end },
+        gD = { function() vim.lsp.buf.declaration() end, condition = "textDocument/declaration" },
+        gI = { function() vim.lsp.buf.implementation() end, condition = "textDocument/implementation" },
+        gr = { function() vim.lsp.buf.references() end, condition = "textDocument/references" },
+        ga = { function() vim.lsp.buf.code_action() end },
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         -- gD = {
         --   function() vim.lsp.buf.declaration() end,

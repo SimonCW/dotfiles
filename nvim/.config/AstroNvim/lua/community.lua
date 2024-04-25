@@ -14,7 +14,7 @@ return {
     -- further customize the options set by the community
     "catppuccin",
     opts = {
-      flavour = "mocha", -- latte, frappe, macchiato, mocha
+      flavour = "frappe", -- latte, frappe, macchiato, mocha
     },
   },
   { import = "astrocommunity.pack.rust" },

@@ -62,6 +62,7 @@ return {
     end,
   },
 
+  { "nvim-telescope/telescope-fzf-native.nvim", enabled = false }, -- disable because is giving build errors
   -- You can disable default plugins as follows:
   { "max397574/better-escape.nvim", enabled = false },
 

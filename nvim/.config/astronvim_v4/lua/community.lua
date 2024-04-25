@@ -9,4 +9,12 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
+  { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
+  {
+    -- further customize the options set by the community
+    "catppuccin",
+    opts = {
+      flavour = "macchiato", -- latte, frappe, macchiato, mocha
+    },
+  },
 }

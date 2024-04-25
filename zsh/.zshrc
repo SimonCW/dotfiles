@@ -201,4 +201,3 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
-

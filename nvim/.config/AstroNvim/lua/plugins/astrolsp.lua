@@ -14,7 +14,7 @@ return {
     features = {
       autoformat = true, -- enable or disable auto formatting on start
       codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = false, -- enable/disable inlay hints on start
+      inlay_hints = true, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
     -- customize lsp formatting options
@@ -44,9 +44,7 @@ return {
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
-    config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-    },
+    config = {},
     -- customize how language servers are attached
     handlers = {
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
@@ -85,13 +83,17 @@ return {
     mappings = {
       n = {
         gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
-        gh = { function() vim.lsp.buf.hover() end },
-        gs = { function() vim.lsp.buf.signature_help() end },
-        gd = { function() vim.lsp.buf.definition() end },
-        gD = { function() vim.lsp.buf.declaration() end, condition = "textDocument/declaration" },
-        gI = { function() vim.lsp.buf.implementation() end, condition = "textDocument/implementation" },
-        gr = { function() vim.lsp.buf.references() end, condition = "textDocument/references" },
-        ga = { function() vim.lsp.buf.code_action() end },
+        gh = { function() vim.lsp.buf.hover() end, name = "Hover" },
+        gs = { function() vim.lsp.buf.signature_help() end, name = "Signature Help" },
+        gd = { function() vim.lsp.buf.definition() end, name = "Definition" },
+        gD = { function() vim.lsp.buf.declaration() end, condition = "textDocument/declaration", name = "Declaration" },
+        gI = {
+          function() vim.lsp.buf.implementation() end,
+          condition = "textDocument/implementation",
+          name = "Implementation",
+        },
+        gr = { function() vim.lsp.buf.references() end, condition = "textDocument/references", name = "References" },
+        ga = { function() vim.lsp.buf.code_action() end, name = "Code Action" },
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         -- gD = {
         --   function() vim.lsp.buf.declaration() end,

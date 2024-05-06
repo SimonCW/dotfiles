@@ -38,6 +38,36 @@ return {
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        rustaceanvim = {
+          -- Plugin configuration
+          server = {
+            default_settings = {
+              -- rust-analyzer language server configuration
+              ["rust-analyzer"] = {
+                inlayHints = {
+                  typeHints = { enable = true },
+                  bindingModeHints = { enable = true },
+                  closingBraceHints = {
+                    minLines = 11,
+                  },
+                  closureCaptureHints = { enable = true },
+                  parameterHints = {
+                    enable = true,
+                  },
+                  rangeExclusiveHints = {
+                    enable = true,
+                  },
+                },
+                completion = {
+                  fullFunctionSignatures = { enable = true },
+                },
+                typing = {
+                  autoClosingAngleBrackets = { enable = true },
+                },
+              },
+            },
+          },
+        },
       },
     },
     -- Mappings can be configured through AstroCore as well.

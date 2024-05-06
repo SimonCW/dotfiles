@@ -18,7 +18,6 @@ return {
         "jsonls",
         "ruff_lsp",
         "taplo",
-        "rust_analyzer",
         "denols",
       })
     end,

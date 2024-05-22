@@ -101,5 +101,23 @@ return {
         -- ["<esc>"] = false,
       },
     },
+    autocmds = {
+      textspellwrap = {
+        {
+          desc = "Enable spell and wrap for text documents",
+          event = "FileType",
+          pattern = {
+            "gitcommit",
+            "markdown",
+            "text",
+            "asciidoc",
+          },
+          callback = function()
+            vim.opt_local.wrap = true
+            vim.opt_local.spell = true
+          end,
+        },
+      },
+    },
   },
 }

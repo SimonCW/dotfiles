@@ -40,6 +40,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "rust_analyzer",
       -- "pyright"
     },
     -- customize language server configuration options passed to `lspconfig`

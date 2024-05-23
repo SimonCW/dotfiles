@@ -45,7 +45,27 @@ return {
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
-    config = {},
+    config = {
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev" },
+              extraArgs = { "--profile", "rust-analyzer" },
+            },
+            inlayHints = {
+              typeHints = { enable = true },
+              lifetimeElisionHints = { enable = "never" },
+              bindingModeHints = { enable = true },
+              closingBraceHints = { enable = false },
+              closureCaptureHints = { enable = true },
+              parameterHints = { enable = false },
+              rangeExclusiveHints = { enable = true },
+            },
+          },
+        },
+      },
+    },
     -- customize how language servers are attached
     handlers = {
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server

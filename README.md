@@ -17,9 +17,20 @@ Upon first clone init submodules:
 git submodule init
 ```
 
-Update Submodules (Themes):
+Update Submodules:
 ```bash
 git submodule update --rebase --remote
+```
+
+Modify file in Submodule:
+```bash
+cd submodule_dir
+# modify file
+git add .
+git commit -m "..."
+cd ..
+git add .
+git commit -m "..."
 ```
 
 Notes on `terminfo`:

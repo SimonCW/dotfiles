@@ -45,6 +45,8 @@ return {
     mappings = {
       -- first key is the mode
       n = {
+        gh = { function() vim.lsp.buf.hover() end, desc = "Also Hover like K" },
+
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs with `H` and `L`

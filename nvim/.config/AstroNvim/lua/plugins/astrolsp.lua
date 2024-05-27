@@ -54,7 +54,7 @@ return {
               extraArgs = { "--profile", "rust-analyzer" },
             },
             inlayHints = {
-              typeHints = { enable = true },
+              typeHints = { enable = false },
               lifetimeElisionHints = { enable = "never" },
               bindingModeHints = { enable = true },
               closingBraceHints = { enable = false },

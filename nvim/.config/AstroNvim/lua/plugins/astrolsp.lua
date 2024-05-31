@@ -13,7 +13,7 @@ return {
     -- Configuration table of features provided by AstroLSP
     features = {
       autoformat = true, -- enable or disable auto formatting on start
-      codelens = true, -- enable/disable codelens refresh on start
+      codelens = false, -- enable/disable codelens refresh on start
       inlay_hints = true, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },

@@ -7,7 +7,9 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.lua", enabled = true },
+  { import = "astrocommunity.pack.bash", enabled = true },
+  { import = "astrocommunity.pack.markdown", enabled = true },
   -- import/override with your plugins folder
   { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
   {

@@ -54,8 +54,8 @@ return {
               extraArgs = { "--profile", "rust-analyzer" },
             },
             inlayHints = {
-              typeHints = { enable = false },
-              lifetimeElisionHints = { enable = "never" },
+              typeHints = { enable = true },
+              lifetimeElisionHints = { enable = "skip_trivial" },
               bindingModeHints = { enable = true },
               closingBraceHints = { enable = false },
               closureCaptureHints = { enable = true },

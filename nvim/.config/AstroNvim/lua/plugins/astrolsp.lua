@@ -103,18 +103,7 @@ return {
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
-        gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
-        gh = { function() vim.lsp.buf.hover() end, name = "Hover" },
-        gs = { function() vim.lsp.buf.signature_help() end, name = "Signature Help" },
-        gd = { function() vim.lsp.buf.definition() end, name = "Definition" },
-        gD = { function() vim.lsp.buf.declaration() end, condition = "textDocument/declaration", name = "Declaration" },
-        gI = {
-          function() vim.lsp.buf.implementation() end,
-          condition = "textDocument/implementation",
-          name = "Implementation",
-        },
-        gr = { function() vim.lsp.buf.references() end, condition = "textDocument/references", name = "References" },
-        ga = { function() vim.lsp.buf.code_action() end, name = "Code Action" },
+
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         -- gD = {
         --   function() vim.lsp.buf.declaration() end,

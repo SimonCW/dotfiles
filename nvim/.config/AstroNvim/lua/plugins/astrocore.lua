@@ -45,7 +45,17 @@ return {
     mappings = {
       -- first key is the mode
       n = {
+        gd = { function() vim.lsp.buf.definition() end, name = "Definition" },
+        gs = { function() vim.lsp.buf.signature_help() end, name = "Signature Help" },
         gh = { function() vim.lsp.buf.hover() end, desc = "Also Hover like K" },
+        gD = { function() vim.lsp.buf.declaration() end, condition = "textDocument/declaration", name = "Declaration" },
+        gI = {
+          function() vim.lsp.buf.implementation() end,
+          condition = "textDocument/implementation",
+          name = "Implementation",
+        },
+        gr = { function() vim.lsp.buf.references() end, condition = "textDocument/references", name = "References" },
+        ga = { function() vim.lsp.buf.code_action() end, name = "Code Action" },
 
         -- second key is the lefthand side of the map
 

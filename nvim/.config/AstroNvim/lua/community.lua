@@ -9,7 +9,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua", enabled = true },
   { import = "astrocommunity.pack.bash", enabled = true },
-  { import = "astrocommunity.pack.markdown", enabled = true },
+  { import = "astrocommunity.pack.markdown", enabled = false },
   -- import/override with your plugins folder
   { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
   {

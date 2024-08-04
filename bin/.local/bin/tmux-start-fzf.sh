@@ -17,15 +17,7 @@ selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 function create_windows_for_special_projects {
-    if [[ $selected_name == "personalised-recommendations" ]]; then
-        window=0
-        tmux rename-window -t $selected_name:$window "Vim"
-        tmux send-keys -t $selected_name:$window "conda activate persrec" C-m
-        tmux send-keys -t $selected_name:$window "vim" C-m
-        window=1
-        tmux new-window -t $selected_name:$window -n "Shell" -c $selected
-        tmux send-keys -t $selected_name:$window "conda activate persrec" C-m
-    elif [[ $selected_name == "mytechblog" ]]; then
+    if [[ $selected_name == "mytechblog" ]]; then
         window=0
         tmux rename-window -t $selected_name:$window "Vim"
         tmux send-keys -t $selected_name:$window "vim" C-m

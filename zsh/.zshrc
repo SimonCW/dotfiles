@@ -130,29 +130,12 @@ alias pqt="parquet-tools"
 alias ll="eza -al"
 alias vim="nvim"
 alias sproj="$HOME/.local/bin/tmux-start-fzf.sh"
-alias pproj="$HOME/.local/bin/tmux-start-fzf.sh $HOME/Repos/vrec/personalised-recommendations/"
- et() { eza -alT --git -I'.git|node_modules|.mypy_cache|.pytest_cache|.venv' --color=always "$@" | bat; }
-    alias et1='et -L1'
-    alias et2='et -L2'
-    alias et3='et -L3'
+
+# Set which Neovim config is started with `nvim`
+export NVIM_APPNAME="AstroNvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/mambaforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/homebrew/Caskroom/mambaforge/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # Add Standard GNU Tools to path
 # see: https://gist.github.com/skyzyx/3438280b18e4f7c490db8a2a2ca0b9da
@@ -168,36 +151,5 @@ fi
 # Colorful man pages: https://www.cyberciti.biz/faq/unix-linux-color-man-pages-configuration/
 export PAGER="/opt/homebrew/bin/most -s"
 
-# https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html
-export GPG_TTY=$(tty)
-gpgconf --launch gpg-agent
 
-
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"
-
-
-# 😤 necessary for tmux-256 colors, see https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/ 
-export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# Set which Neovim config is started with `nvim`
-export NVIM_APPNAME="AstroNvim"
-
-# Nvim Switcher, see https://youtu.be/LkHjJlSgKZY
-alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
-function nvims() {
-  items=("default" "AstroNvim")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-    config=""
-  fi
-  NVIM_APPNAME=$config nvim $@
-}
 

@@ -75,7 +75,9 @@ return {
         gr = { function() vim.lsp.buf.references() end, condition = "textDocument/references", desc = "References" },
         ga = { function() vim.lsp.buf.code_action() end, desc = "Code Action" },
 
-        -- navigate buffer tabs
+        -- -- navigate buffer tabs with `H` and `L`
+        L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {

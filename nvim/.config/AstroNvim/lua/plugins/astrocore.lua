@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -10,6 +10,24 @@ return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
+    autocmds = {
+      textspellwrap = {
+        {
+          desc = "Enable spell and wrap for text documents",
+          event = "FileType",
+          pattern = {
+            "gitcommit",
+            "markdown",
+            "text",
+            "asciidoc",
+          },
+          callback = function()
+            vim.opt_local.wrap = true
+            vim.opt_local.spell = true
+          end,
+        },
+      },
+    },
     -- Configure core features of AstroNvim
     features = {
       large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
@@ -45,10 +63,19 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
+        gd = { function() vim.lsp.buf.definition() end, desc = "Definition" },
+        gs = { function() vim.lsp.buf.signature_help() end, desc = "Signature Help" },
+        gh = { function() vim.lsp.buf.hover() end, desc = "Also Hover like K" },
+        gD = { function() vim.lsp.buf.declaration() end, condition = "textDocument/declaration", desc = "Declaration" },
+        gI = {
+          function() vim.lsp.buf.implementation() end,
+          condition = "textDocument/implementation",
+          desc = "Implementation",
+        },
+        gr = { function() vim.lsp.buf.references() end, condition = "textDocument/references", desc = "References" },
+        ga = { function() vim.lsp.buf.code_action() end, desc = "Code Action" },
 
         -- navigate buffer tabs
-        ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {

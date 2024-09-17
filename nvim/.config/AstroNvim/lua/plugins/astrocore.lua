@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -12,10 +12,10 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+      large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 2, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
@@ -30,9 +30,8 @@ return {
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
-        signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
-        clipboard = nil,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -45,57 +44,28 @@ return {
     mappings = {
       -- first key is the mode
       n = {
-        gd = { function() vim.lsp.buf.definition() end, name = "Definition" },
-        gs = { function() vim.lsp.buf.signature_help() end, name = "Signature Help" },
-        gh = { function() vim.lsp.buf.hover() end, desc = "Also Hover like K" },
-        gD = { function() vim.lsp.buf.declaration() end, condition = "textDocument/declaration", name = "Declaration" },
-        gI = {
-          function() vim.lsp.buf.implementation() end,
-          condition = "textDocument/implementation",
-          name = "Implementation",
-        },
-        gr = { function() vim.lsp.buf.references() end, condition = "textDocument/references", name = "References" },
-        ga = { function() vim.lsp.buf.code_action() end, name = "Code Action" },
-
         -- second key is the lefthand side of the map
 
-        -- navigate buffer tabs with `H` and `L`
-        L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        -- navigate buffer tabs
+        ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- mappings seen under group name "Buffer"
-        ["<Leader>bD"] = {
+        ["<Leader>bd"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
               function(bufnr) require("astrocore.buffer").close(bufnr) end
             )
           end,
-          desc = "Pick to close",
+          desc = "Close buffer from tabline",
         },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
-        ["<Leader>b"] = { desc = "Buffers" },
-        -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-      },
-      -- a `cond` key can pro
-    },
-    autocmds = {
-      textspellwrap = {
-        {
-          desc = "Enable spell and wrap for text documents",
-          event = "FileType",
-          pattern = {
-            "gitcommit",
-            "markdown",
-            "text",
-            "asciidoc",
-          },
-          callback = function()
-            vim.opt_local.wrap = true
-            vim.opt_local.spell = true
-          end,
-        },
+        -- ["<Leader>b"] = { desc = "Buffers" },
+
+        -- setting a mapping to false will disable it
+        -- ["<C-S>"] = false,
       },
     },
   },

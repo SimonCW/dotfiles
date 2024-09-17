@@ -66,13 +66,12 @@ return {
         gd = { function() vim.lsp.buf.definition() end, desc = "Definition" },
         gs = { function() vim.lsp.buf.signature_help() end, desc = "Signature Help" },
         gh = { function() vim.lsp.buf.hover() end, desc = "Also Hover like K" },
-        gD = { function() vim.lsp.buf.declaration() end, condition = "textDocument/declaration", desc = "Declaration" },
+        gD = { function() vim.lsp.buf.declaration() end, desc = "Declaration" },
         gI = {
           function() vim.lsp.buf.implementation() end,
-          condition = "textDocument/implementation",
           desc = "Implementation",
         },
-        gr = { function() vim.lsp.buf.references() end, condition = "textDocument/references", desc = "References" },
+        gr = { function() vim.lsp.buf.references() end, desc = "References" },
         ga = { function() vim.lsp.buf.code_action() end, desc = "Code Action" },
 
         -- navigate buffer tabs with `H` and `L`

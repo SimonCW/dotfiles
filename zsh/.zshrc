@@ -153,3 +153,5 @@ export PAGER="/opt/homebrew/bin/most -s"
 
 
 
+
+. "$HOME/.cargo/env"

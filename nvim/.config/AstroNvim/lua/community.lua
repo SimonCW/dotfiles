@@ -16,7 +16,7 @@ return {
     -- further customize the options set by the community
     "catppuccin",
     opts = {
-      flavour = "frappe", -- latte, frappe, macchiato, mocha
+      flavour = "mocha", -- latte, frappe, macchiato, mocha
     },
   },
 }

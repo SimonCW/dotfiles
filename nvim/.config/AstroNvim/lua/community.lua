@@ -10,6 +10,7 @@ return {
   { import = "astrocommunity.pack.lua", enabled = true },
   { import = "astrocommunity.pack.bash", enabled = true },
   { import = "astrocommunity.pack.markdown", enabled = false },
+  { import = "astrocommunity.markdown-and-latex.markview-nvim", enabled = true },
   -- import/override with your plugins folder
   { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
   {

@@ -152,6 +152,7 @@ fi
 export PAGER="/opt/homebrew/bin/most -s"
 
 
-
-
 . "$HOME/.cargo/env"
+
+# PHP Composer global libraries
+export PATH="$PATH:$HOME/.composer/vendor/bin"

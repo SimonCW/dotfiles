@@ -129,7 +129,7 @@ fi
 alias pqt="parquet-tools"
 alias ll="eza -al"
 alias vim="nvim"
-alias sproj="$HOME/.local/bin/tmux-start-fzf.sh"
+# alias sproj="$HOME/.local/bin/tmux-start-fzf.sh"
 
 # Set which Neovim config is started with `nvim`
 export NVIM_APPNAME="AstroNvim"

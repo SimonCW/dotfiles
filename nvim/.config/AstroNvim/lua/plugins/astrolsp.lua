@@ -54,6 +54,7 @@ return {
               extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev" },
               extraArgs = { "--profile", "rust-analyzer" },
             },
+            check = { command = "clippy" },
             inlayHints = {
               typeHints = { enable = true },
               lifetimeElisionHints = { enable = "skip_trivial" },

@@ -58,7 +58,6 @@ return {
       },
     },
     -- Mappings can be configured through AstroCore as well.
-    -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       -- first key is the mode
       n = {
@@ -88,12 +87,23 @@ return {
           desc = "Close buffer from tabline",
         },
 
+        -- Copy to clipboard with leader key
+        ["<Leader>y"] = { '"+y' },
+        ["<Leader>p"] = { '"+p' },
+        ["<Leader>P"] = { '"+P' },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      v = {
+        -- Copy to clipboard with leader key
+        ["<Leader>y"] = { '"+y' },
+        ["<Leader>p"] = { '"+p' },
+        ["<Leader>P"] = { '"+P' },
       },
     },
   },

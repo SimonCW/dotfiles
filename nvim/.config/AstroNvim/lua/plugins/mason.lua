@@ -16,7 +16,7 @@ return {
         "dockerls",
         "yamlls",
         "jsonls",
-        "ruff_lsp",
+        "ruff",
         "taplo",
         "denols",
       })

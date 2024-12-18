@@ -19,7 +19,6 @@ return {
         "ruff",
         "taplo",
         "denols",
-        "actionlint",
       })
     end,
   },
@@ -32,7 +31,7 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         --"prettier",
         "stylua",
-        "black",
+        "actionlint",
         -- add more arguments for adding more null-ls sources
       })
     end,

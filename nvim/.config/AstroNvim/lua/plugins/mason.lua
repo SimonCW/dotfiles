@@ -19,6 +19,7 @@ return {
         "ruff",
         "taplo",
         "denols",
+        "actionlint",
       })
     end,
   },

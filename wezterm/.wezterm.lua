@@ -9,7 +9,7 @@ config.font = wezterm.font({
 	weight = "DemiBold",
 })
 config.native_macos_fullscreen_mode = true
-config.pane_focus_follows_mouse = true
+config.pane_focus_follows_mouse = false
 -- Necessary for my Moonlander Layout to work.
 config.send_composed_key_when_left_alt_is_pressed = true
 config.window_decorations = "TITLE | RESIZE"
@@ -58,33 +58,15 @@ end
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	-- splitting
-	{
-		mods = "LEADER",
-		key = "h",
-		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		mods = "LEADER",
-		key = "v",
-		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		mods = "LEADER",
-		key = "x",
-		action = act.CloseCurrentPane({ confirm = false }),
-	},
-	{
-		key = "Enter",
-		mods = "LEADER",
-		action = act.ActivateCopyMode,
-	},
-	{
-		key = "t",
-		mods = "LEADER",
-		action = act.SpawnTab("CurrentPaneDomain"),
-	},
+	{ mods = "LEADER", key = "h", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ mods = "LEADER", key = "v", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ mods = "LEADER", key = "x", action = act.CloseCurrentPane({ confirm = false }) },
+	{ key = "f", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
+	{ key = "Enter", mods = "LEADER", action = act.ActivateCopyMode },
+	{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 	{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
 	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
+	{ key = "w", mods = "LEADER", action = act.ShowTabNavigator },
 
 	-- Navigation between panes and neovim using the smart-splits-function
 	-- move between split panes

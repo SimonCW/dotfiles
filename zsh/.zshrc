@@ -156,3 +156,6 @@ export PAGER="/opt/homebrew/bin/most -s"
 
 # PHP Composer global libraries
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+# Make Node 22 default for aws cdk
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"

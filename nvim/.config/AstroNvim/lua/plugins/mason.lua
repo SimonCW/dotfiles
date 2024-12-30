@@ -18,7 +18,6 @@ return {
         "jsonls",
         "ruff",
         "taplo",
-        "denols",
       })
     end,
   },

@@ -22,5 +22,11 @@ return {
         path = "~/Repos/theuniverse",
       },
     },
+    daily_notes = {
+      -- Optional, if you keep daily notes in a separate directory.
+      folder = "dailies",
+      default_tags = { "daily-notes" },
+    },
+    disable_frontmatter = true,
   },
 }

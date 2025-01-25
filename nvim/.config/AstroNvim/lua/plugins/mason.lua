@@ -15,6 +15,7 @@ return {
         "yamlls",
         "jsonls",
         "ruff",
+        "markdown_oxide", -- lsp for working with obsidian files
         "taplo",
       })
     end,

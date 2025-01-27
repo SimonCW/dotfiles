@@ -159,6 +159,3 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Make Node 22 default for aws cdk
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
-
-# Use buildkit by default. This was necessary for cdk / building the AMD64 image
-export DOCKER_BUILDKIT=1

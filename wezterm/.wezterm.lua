@@ -4,43 +4,10 @@ local act = wezterm.action
 
 config.color_scheme = "Catppuccin Mocha" -- Latte, Frappé, Macchiato, Mocha
 config.font_size = 16
-config.font = wezterm.font({ -- Normal text
-	family = "Monaspace Neon",
-	weight = "Medium",
-	harfbuzz_features = { "calt", "liga" },
+config.font = wezterm.font({
+	family = "JetBrains Mono",
+	weight = "DemiBold",
 })
-
-config.font_rules = {
-	{ -- Italic
-		intensity = "Normal",
-		italic = true,
-		font = wezterm.font({
-			family = "Monaspace Radon", -- script style
-			-- family = "Monaspace Xenon", -- courier-like
-			style = "Italic",
-		}),
-	},
-
-	{ -- Bold
-		intensity = "Bold",
-		italic = false,
-		font = wezterm.font({
-			family = "Monaspace Krypton",
-			weight = "ExtraBold",
-			-- weight = "Bold",
-		}),
-	},
-
-	{ -- Bold Italic
-		intensity = "Bold",
-		italic = true,
-		font = wezterm.font({
-			family = "Monaspace Xenon",
-			style = "Italic",
-			weight = "Bold",
-		}),
-	},
-}
 config.native_macos_fullscreen_mode = true
 config.pane_focus_follows_mouse = false
 -- Necessary for my Moonlander Layout to work.

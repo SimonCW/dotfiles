@@ -159,3 +159,5 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Make Node 22 default for aws cdk
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+# Make Node 20 default for remix workshop
+# export PATH="/opt/homebrew/opt/node@20/bin:$PATH"

@@ -55,6 +55,7 @@ return {
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
         conceallevel = 2,
+        clipboard = "",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)

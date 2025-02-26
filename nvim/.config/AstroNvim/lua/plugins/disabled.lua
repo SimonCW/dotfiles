@@ -4,4 +4,5 @@ return {
     enabled = false,
   },
   { "mfussenegger/nvim-dap", enabled = false },
+  { "vuki656/package-info.nvim", enabled = false },
 }

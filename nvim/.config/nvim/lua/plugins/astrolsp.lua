@@ -44,6 +44,18 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              autoImportCompletions = true,
+              autoSearchPaths = true,
+              diagnosticMode = "workspace",
+              typeCheckingMode = "standard",
+            },
+          },
+        },
+      },
       markdown_oxide = { capabilities = { workspace = { didChangeWatchedFiles = { dynamicRegistration = true } } } },
       rust_analyzer = {
         settings = {

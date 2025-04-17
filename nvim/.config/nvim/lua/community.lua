@@ -13,7 +13,6 @@ return {
   { import = "astrocommunity.markdown-and-latex.markview-nvim", enabled = false },
   -- import/override with your plugins folder
   { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
-  { import = "astrocommunity.recipes.telescope-lsp-mappings", enabled = true },
   {
     -- further customize the options set by the community
     "catppuccin",

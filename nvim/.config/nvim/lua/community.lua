@@ -10,6 +10,7 @@ return {
   { import = "astrocommunity.pack.markdown", enabled = true },
   { import = "astrocommunity.pack.php", enabled = true },
   { import = "astrocommunity.pack.typescript", enabled = true },
+  { import = "astrocommunity.editing-support.copilotchat-nvim", enabled = true },
   { import = "astrocommunity.markdown-and-latex.markview-nvim", enabled = false },
   -- import/override with your plugins folder
   { import = "astrocommunity.colorscheme.catppuccin", enabled = true },

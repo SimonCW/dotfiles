@@ -98,6 +98,16 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+
+        -- Resize. Check wezterm config for harmonized handling!
+        ["<C-S-h>"] = { function() require("smart-splits").resize_left() end, desc = "Resize left" },
+        ["<C-S-j>"] = { function() require("smart-splits").resize_down() end, desc = "Resize down" },
+        ["<C-S-k>"] = { function() require("smart-splits").resize_up() end, desc = "Resize up" },
+        ["<C-S-l>"] = { function() require("smart-splits").resize_right() end, desc = "Resize right" },
+        ["<C-Left>"] = false,
+        ["<C-Up>"] = false,
+        ["<C-Down>"] = false,
+        ["<C-Right>"] = false,
       },
       v = {
         -- Copy to clipboard with leader key

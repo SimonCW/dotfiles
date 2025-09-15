@@ -93,5 +93,17 @@ return {
     },
     { "AstroNvim/astroui", opts = { icons = { CopilotChat = "" } } },
   },
-  opts = {},
+  opts = {
+    headers = {
+      user = "👤 You",
+      assistant = "🤖 Copilot",
+      tool = "🔧 Tool",
+    },
+    mappings = {
+      reset = false,
+      complete = {
+        insert = "<C-f>",
+      },
+    },
+  },
 }
